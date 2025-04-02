@@ -5,11 +5,14 @@ using System;
 public class EnemyBehavior : MonoBehaviour
 {
     public int healthPoints;
-    public ShipHandler player;
+    public UIHandler ui;
+    public ShipHandler ship;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GetComponent<ShipHandler>();
+        ship = GetComponent<ShipHandler>();
+        ui = GetComponent<UIHandler>();
+        ui.enemyCount += 1;
     }
 
     // Update is called once per frame
@@ -20,4 +23,10 @@ public class EnemyBehavior : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnDestroy()
+    {
+        ui.enemyCount -= 1;
+    }
+
 }

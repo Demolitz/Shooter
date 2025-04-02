@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 96617124}
   m_Layer: 0
   m_Name: Wall (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -865,6 +865,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5414ebee6f02f7943843b056ab54a9e6, type: 3}
+--- !u!1 &220024693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 220024695}
+  - component: {fileID: 220024694}
+  m_Layer: 0
+  m_Name: ui
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &220024694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220024693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7f92076a792ee4790a555ee13b764b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 0
+  enemyCount: 0
+  healthText: {fileID: 167440584}
+  scenes: {fileID: 0}
+  player: {fileID: 0}
+--- !u!4 &220024695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220024693}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1195.2548, y: 1068.4476, z: -9.373502}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &258949647
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +1031,7 @@ GameObject:
   - component: {fileID: 301638165}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1834,7 +1883,7 @@ GameObject:
   - component: {fileID: 1129402627}
   m_Layer: 0
   m_Name: Wall (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2591,12 +2640,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  healthText: {fileID: 167440584}
   moveSpeed: 5
   bulletspeed: 7
   beam: {fileID: 7815474936683430454, guid: a12d82d8527f5124d92f6c3f88660767, type: 3}
   bulletspawn: {fileID: 258949648}
   bulletspawn2: {fileID: 880740246}
+  changer: {fileID: 0}
 --- !u!50 &1632318814
 Rigidbody2D:
   serializedVersion: 5
@@ -2829,7 +2878,7 @@ GameObject:
   - component: {fileID: 1920555642}
   m_Layer: 0
   m_Name: Wall (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3194,3 +3243,4 @@ SceneRoots:
   - {fileID: 1121611389}
   - {fileID: 864999266}
   - {fileID: 1362292263}
+  - {fileID: 220024695}

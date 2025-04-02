@@ -24,5 +24,9 @@ public class Beam : MonoBehaviour
             enemy.healthPoints -= dmg;
             Destroy(gameObject);
         }
+        else if (collision.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

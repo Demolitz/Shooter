@@ -1,36 +1,37 @@
 using UnityEngine;
 using TMPro;
 using JetBrains.Annotations;
+using System.Runtime.CompilerServices;
 
 public class ShipHandler : MonoBehaviour
 {
     public int health;
-    public TextMeshProUGUI healthText;
     public float moveSpeed = 5f, bulletspeed = 7f;
     private Rigidbody2D rb;
     public GameObject beam;
     public Transform bulletspawn, bulletspawn2;
+    public SceneChanger changer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        health = 3;
+        changer = gameObject.GetComponent<SceneChanger>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthText.text = health.ToString();
-        if (health <= 0) 
+        if (health <= 0)
         {
             Destroy(gameObject);
         }
+
         float horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        rb.linearVelocity = new Vector2 (horizontalInput * moveSpeed, 0f);
+        rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, 0f);
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject bullet = Instantiate(beam, bulletspawn.position, bulletspawn.rotation);
             GameObject bullet2 = Instantiate(beam, bulletspawn2.position, bulletspawn2.rotation);
@@ -39,5 +40,10 @@ public class ShipHandler : MonoBehaviour
             bp1.linearVelocity = Vector2.up * bulletspeed;
             bp2.linearVelocity = Vector2.up * bulletspeed;
         }
+    }
+
+    private void OnDestroy()
+    {
+        changer.ChangeScene_Fail();
     }
 }
