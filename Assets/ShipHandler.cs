@@ -1,7 +1,11 @@
 using UnityEngine;
+using TMPro;
+using JetBrains.Annotations;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class ShipHandler : MonoBehaviour
 {
+    public int health;
+    public TextMeshProUGUI healthText;
     public float moveSpeed = 5f, bulletspeed = 7f;
     private Rigidbody2D rb;
     public GameObject beam;
@@ -10,16 +14,21 @@ public class NewMonoBehaviourScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        health = 3;
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        healthText.text = health.ToString();
+        if (health <= 0) 
+        {
+            Destroy(gameObject);
+        }
         float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical"); 
 
-        rb.linearVelocity = new Vector2 (horizontalInput * moveSpeed, verticalInput * moveSpeed);
+        rb.linearVelocity = new Vector2 (horizontalInput * moveSpeed, 0f);
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
