@@ -11,12 +11,15 @@ public class ShipHandler : MonoBehaviour
     public GameObject beam;
     public Transform bulletspawn, bulletspawn2;
     public SceneChanger changer;
+    public UIHandler ui;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        changer = gameObject.GetComponent<SceneChanger>();
+        ui = GameObject.FindObjectOfType<UIHandler>();
+        changer = ui.GetComponent<SceneChanger>();
         rb = GetComponent<Rigidbody2D>();
+        health = 5;
     }
 
     // Update is called once per frame
@@ -25,6 +28,7 @@ public class ShipHandler : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            changer.ChangeScene_GameOver();
         }
 
         float horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -40,10 +44,5 @@ public class ShipHandler : MonoBehaviour
             bp1.linearVelocity = Vector2.up * bulletspeed;
             bp2.linearVelocity = Vector2.up * bulletspeed;
         }
-    }
-
-    private void OnDestroy()
-    {
-        changer.ChangeScene_Fail();
     }
 }

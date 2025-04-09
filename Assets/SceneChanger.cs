@@ -8,14 +8,14 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene("SpaceShooter");
     }
 
+    public void ChangeScene_GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+
     public void ChangeScene_Clear()
     {
         SceneManager.LoadScene("Clear");
-    }
-
-    public void ChangeScene_Fail()
-    {
-        SceneManager.LoadScene("Fail");
     }
 
     public void ExitGame()

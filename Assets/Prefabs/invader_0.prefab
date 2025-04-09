@@ -208,3 +208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 40
+  bulletspeed: 3
+  movespeed: 1
+  eb: {fileID: 0}
+  bullet: {fileID: 2091946541659182023, guid: 6a1f800674617c04bb2fe28ed9a041db, type: 3}
+  bulletspawn: {fileID: 0}
